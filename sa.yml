@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sa-po
+  name: sa-po
+spec:
+  serviceAccountName: myuser # we use pod.spec.serviceAccountName
+  containers:
+  - image: nginx
+    imagePullPolicy: IfNotPresent
+    name: sa-po
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

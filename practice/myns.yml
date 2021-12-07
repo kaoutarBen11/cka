@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2021-10-30T18:09:33Z"
+  labels:
+    kubernetes.io/metadata.name: myns
+  name: myns
+  resourceVersion: "121157"
+  uid: 4d8f580b-cc39-4c11-b7c5-4f6757ddada3
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

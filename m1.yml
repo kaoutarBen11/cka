@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: multi-container-playground
+  name: multi-container-playground
+spec:
+  containers:
+  - image: nginx:1.17.6-alpine
+    name: c1
+    env:
+    - value: MY_NODE_NAME
+      name: nodeName
+  - image: busybox:1.31.1
+    name: c2
+    command: ["sh","-c","while true; do date >> /your/vol/path/date.log; sleep 1; done"]
+  - image: busybox:1.31.1
+    name: c3
+    command: ["sh","-c","tail -f /your/vol/path/date.log"]

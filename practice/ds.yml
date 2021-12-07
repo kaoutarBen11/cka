@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: ds-everywhere
+  name: ds-everywhere
+spec:
+  selector:
+    matchLabels:
+      app: ds-everywhere
+  template:
+    metadata:
+      labels:
+        app: ds-everywhere
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

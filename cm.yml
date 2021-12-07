@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-po
+  name: nginx-po
+spec:
+  containers:
+  - image: nginx
+    name: nginx-po
+    envFrom:
+      - configMapRef:
+          name: options
+  restartPolicy: Always

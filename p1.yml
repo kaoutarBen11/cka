@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    container: pod
+    pod: container
+  name: tigers-reunite
+spec:
+  containers:
+  - image: httpd:2.4.41-alpine
+    name: tigers-reunite
+    
